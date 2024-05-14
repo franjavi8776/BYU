@@ -10,9 +10,9 @@ elif grade >= 60:
   letter = "D"
 else:
   letter = "F"
-  
+
 sign = ""
-last_digit = grade % 10 
+last_digit = grade % 10
 
 if last_digit >= 7:
     sign = "+"
@@ -20,20 +20,16 @@ elif last_digit < 3:
     sign = "-"
 else:
     sign = ""
-    
+
 if grade >= 93:
   sign = ""
-  
+
 if grade < 60:
-  sign = ""      
+  sign = ""
 
 print(f"Your letter grade is {letter}{sign}")
 
 if grade >= 70:
   print("Congratulations! You passed the class!")
 else:
-  print("You'll get it next time!")  
-      
-      
-      
-    
+  print("You'll get it next time!")
