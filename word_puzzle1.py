@@ -35,7 +35,18 @@ while game_over:
 
     if len(guess) != len(secret_word):
         print("The guess must have the same number of letters as the secret word.")
-    elif guess == secret_word_lower:
-        print("Congratulations!!!, you guessed it!!!")
-        print(f"It took you {count_guesses} guesses.")
-        game_over = False
+    else:
+        if guess == secret_word_lower:
+            print("Congratulations!!!, you guessed it!!!")
+            print(f"It took you {count_guesses} guesses.")
+            game_over = False
+        else:
+            hint = ""
+            for i in range(len(secret_word)):
+                if guess[i] == secret_word_lower[i]:
+                    hint += guess[i].upper()
+                elif guess[i] in secret_word_lower:
+                    hint += guess[i].lower()
+                else:
+                    hint += "_"
+            print(f"Your hint is: {hint}")
