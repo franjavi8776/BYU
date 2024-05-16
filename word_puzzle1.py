@@ -1,19 +1,42 @@
+import random
 # Word puzzle - Milestone submission
 
-secret_word = "mosiah"
-secret_word_lower = secret_word.lower()
-count_guesses = 0
-
-#
-init_hint = ""
-for letter in secret_word:
-    init_hint += "_ "
-print(f"The hint is: {init_hint}")
 
 play_again = "yes"
 while play_again == "yes":
-
     keep_going = True
+    count_guesses = 0
+    guesses = 0
+
+    secret_word_array = ["Mosiah", "Moroni", "Alma", "Nephi", "Eter"]
+    secret_word = random.choice(secret_word_array)
+    secret_word_lower = secret_word.lower()
+
+    init_hint = ""
+    for letter in secret_word:
+        init_hint += "_ "
+    print(f"The hint is: {init_hint}")
+
+    invalid_level = True
+    while invalid_level:
+        game_level = input(
+            "What level do you want to play: (easy/medium/hard)? ").lower()
+
+        if game_level == "easy":
+            guesses = 10
+            print("You had chosen an easy level, you have 10 guesses.")
+            invalid_level = False
+        elif game_level == "medium":
+            guesses = 8
+            print("You had chosen a medium level, you have 8 guesses.")
+            invalid_level = False
+        elif game_level == "hard":
+            guesses = 5
+            print("You had chosen a hard level, you have 5 guesses.")
+            invalid_level = False
+        else:
+            print("Invalid choice. Please choose a valid game level.")
+
     while keep_going:
         guess = input("What is your guess? ").lower()
         count_guesses += 1
@@ -35,9 +58,8 @@ while play_again == "yes":
                     else:
                         hint += "_"
                 print(f"Your hint is: {hint}")
-        if count_guesses > 5:
-            print(f"You lose, you exceeded the number of guesses {
-                  count_guesses}.")
+        if count_guesses > guesses:
+            print(f"You lose, you exceeded the {guesses} guesses.")
             keep_going = False
 
     play_again = input("Do you like to play again? (yes/not): ")
