@@ -4,12 +4,13 @@ import random
 
 play_again = "yes"
 while play_again == "yes":
+
     keep_going = True
     count_guesses = 0
     guesses = 0
 
-    secret_word_array = ["Mosiah", "Moroni", "Alma", "Nephi", "Eter"]
-    secret_word = random.choice(secret_word_array)
+    secret_word_arr = ["Mosiah", "Moroni", "Alma", "Nephi", "Eter"]
+    secret_word = random.choice(secret_word_arr)
     secret_word_lower = secret_word.lower()
 
     init_hint = ""
