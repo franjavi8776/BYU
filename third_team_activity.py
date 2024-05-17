@@ -23,5 +23,5 @@ while game_over == "yes":
             print("Congratulations, you guessed it!!!")
             print(f"It took you {count_guesses} guesses.")
 
-    game_over = input("Do you want to play again. (yes or no)? ")
+    game_over = input("Do you want to play again. (yes or no)? ").lower()
 print("Thank you for playing, goodbye.")
