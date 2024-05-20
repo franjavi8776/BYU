@@ -1,7 +1,10 @@
+# Word puzzle - Final submission
+# This program is a word guessing game where the player guesses the secret word on hints provided
+
+# Import random module
 import random
-# Word puzzle - Milestone submission
 
-
+# Main while loop to allow replaying the game
 play_again = "yes"
 while play_again == "yes":
 
@@ -9,15 +12,18 @@ while play_again == "yes":
     count_guesses = 0
     guesses = 0
 
+    # List of possible secret words
     secret_word_arr = ["Mosiah", "Moroni", "Alma", "Nephi", "Eter"]
     secret_word = random.choice(secret_word_arr)
     secret_word_lower = secret_word.lower()
 
+    # Initial hint with underscores representing each letter in the secret word
     init_hint = ""
     for letter in secret_word:
         init_hint += "_ "
     print(f"The hint is: {init_hint}")
 
+    # while loop to ensure a valid game level
     invalid_level = True
     while invalid_level:
         game_level = input(
@@ -38,6 +44,7 @@ while play_again == "yes":
         else:
             print("Invalid choice. Please choose a valid game level.")
 
+    # While loop the guessing game
     while keep_going:
         guess = input("What is your guess? ").lower()
         count_guesses += 1
@@ -50,6 +57,7 @@ while play_again == "yes":
                 print(f"It took you {count_guesses} guesses.")
                 keep_going = False
             else:
+                # Generate a hint based on the guess
                 hint = ""
                 for i in range(len(secret_word)):
                     if guess[i] == secret_word_lower[i]:
@@ -59,10 +67,13 @@ while play_again == "yes":
                     else:
                         hint += "_"
                 print(f"Your hint is: {hint}")
+
+        # Check if the player has exceeded the allowed number of guesses
         if count_guesses > guesses:
             print(f"You lose, you exceeded the {guesses} guesses.")
             keep_going = False
 
+    # Ask if the player wants to play again
     play_again = input("Do you like to play again? (yes/not): ")
     if play_again != "yes":
         print("Thank you for playing")
