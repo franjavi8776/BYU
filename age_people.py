@@ -20,7 +20,7 @@ for person in people:
     age = int(part[1])
 
     if age < youngest_age:
-       youngest_age = age
-       youngest_name = name
+        youngest_age = age
+        youngest_name = name
 
 print(f"The youngest person is {youngest_name} with an age of {youngest_age}.")
