@@ -10,7 +10,6 @@ with open('life-expectancy.csv') as f:
 
     min_life_expectancy_year = 9999
     max_life_expectancy_year = -1
-
     total = 0
     count = 0
     # Skip the header line
@@ -61,10 +60,10 @@ with open('life-expectancy.csv') as f:
                 max_country_year = country
     average = total/count
     print()
-    print(f"The overall min life expectancy is: {min_life_expectancy} from {min_country} in {min_year}")
     print(f"The overall max life expectancy is: {max_life_expectancy} from {max_country} in {max_year}")
+    print(f"The overall min life expectancy is: {min_life_expectancy} from {min_country} in {min_year}")
     print()
     print(f"For the year {year_of_interest}:")
-    print(average)
+    print(f"The average life expextancy across all countries was {average:.2f}")
     print(f"The max life expectancy was in {max_country_year} with {max_life_expectancy_year}")
     print(f"The min life expectancy was in {min_country_year} with {min_life_expectancy_year}")

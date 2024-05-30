@@ -12,4 +12,10 @@ with open("hr_system.txt") as f:
         job_title = parts[2]
         salary = float(parts[3])
 
-        print(f"Name: {name}, Title: {job_title}")
+        biweekly_payment = salary / 24
+
+        if job_title == "Engineer":
+            biweekly_payment += 1000
+
+
+        print(f"{name} (ID: {id_number}), {job_title} - ${biweekly_payment:.2f}")
