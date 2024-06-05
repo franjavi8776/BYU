@@ -1,7 +1,6 @@
 secret_word = "mosiah"
 count_guesses = 0
 
-#underscore = "_ " * len(secret_word)
 
 underscore = ""
 for letter in secret_word:
